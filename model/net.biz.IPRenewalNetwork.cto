@@ -13,3 +13,16 @@
  */
 
 namespace net.biz.IPRenewalNetwork
+
+asset IntellectualPropertyRight identified by IPId {
+  o String   IPId
+  --> Person   owner
+  --> Person   agent
+  o String   title
+}
+
+participant Person identified by personId {
+  o String personId
+  o String firstName
+  o String lastName
+}

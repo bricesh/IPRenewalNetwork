@@ -19,6 +19,7 @@ asset IntellectualPropertyRight identified by IPId {
   --> Person   owner
   --> Person   agent
   o String   title
+  o String   country
 }
 
 participant Person identified by personId {

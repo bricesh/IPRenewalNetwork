@@ -14,16 +14,31 @@
 
 namespace net.biz.IPRenewalNetwork
 
-asset IntellectualPropertyRight identified by IPId {
-  o String   IPId
-  --> Person   owner
-  --> Person   agent
-  o String   title
-  o String   country
-}
-
 participant Person identified by personId {
   o String personId
-  o String firstName
-  o String lastName
+  o String Name
+}
+
+asset IPRight identified by IPRightId {
+  o String   IPRightId
+  --> Person   Owner
+  --> Person   Agent
+  o String   CountryCode
+  o String   Status
+}
+
+asset IPPortfolio identified by IPPortfolioId {
+  o String   IPPortfolioId
+  --> Person   Instructor
+  --> IPRight  IPRightId
+}
+
+transaction InstructRenewal identified by InstructRenewalId {
+  o String InstructRenewalId
+  --> IPRight Property
+}
+
+transaction RenewPortfolio identified by RenewPortfolioId {
+  o String RenewPortfolioId
+  --> IPPortfolio Porfolio
 }

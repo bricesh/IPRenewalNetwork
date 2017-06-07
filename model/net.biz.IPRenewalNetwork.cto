@@ -30,7 +30,7 @@ asset IPRight identified by IPRightId {
 asset IPPortfolio identified by IPPortfolioId {
   o String   IPPortfolioId
   --> Person   Instructor
-  --> IPRight  IPRightId
+  --> IPRight[]  Property
 }
 
 transaction InstructRenewal identified by InstructRenewalId {
@@ -40,5 +40,5 @@ transaction InstructRenewal identified by InstructRenewalId {
 
 transaction RenewPortfolio identified by RenewPortfolioId {
   o String RenewPortfolioId
-  --> IPPortfolio Porfolio
+  --> IPPortfolio Portfolio
 }

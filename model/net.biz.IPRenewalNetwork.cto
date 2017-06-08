@@ -14,6 +14,12 @@
 
 namespace net.biz.IPRenewalNetwork
 
+enum PropertyStatus {
+  o TO_BE_RENEWED
+  o RENEWED
+  o TO_BE_ABANDONNED
+}
+
 participant Person identified by personId {
   o String personId
   o String Name
@@ -24,7 +30,7 @@ asset IPRight identified by IPRightId {
   --> Person   Owner
   --> Person   Agent
   o String   CountryCode
-  o String   Status
+  o PropertyStatus   Status
 }
 
 asset IPPortfolio identified by IPPortfolioId {

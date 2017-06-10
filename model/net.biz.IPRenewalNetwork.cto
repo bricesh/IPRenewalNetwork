@@ -48,3 +48,8 @@ transaction RenewPortfolio identified by RenewPortfolioId {
   o String RenewPortfolioId
   --> IPPortfolio Portfolio
 }
+
+event RenewEvent identified by eventId {
+  o String eventId
+  --> IPRight property
+}
